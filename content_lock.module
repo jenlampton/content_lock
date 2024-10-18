@@ -238,7 +238,7 @@ function content_lock_preprocess_views_view_field(&$var) {
       $token_path = $matches[1];
 
       // add token to href
-      $pattern = '/(href="\/node\/\d+\/edit[^"]*)/';
+      $pattern = '/(href=".*\/node\/\d+\/edit[^"]*)/';
       $replacement = '$1&content_lock_token=' . backdrop_get_token($token_path);
       $var['output'] = preg_replace($pattern, $replacement, $output);
     }
